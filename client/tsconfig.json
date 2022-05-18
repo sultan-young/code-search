@@ -28,6 +28,10 @@
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./",                                      /* Specify the base directory to resolve non-relative module names. */
+    /*
+    * TIPS: 这里可以解决别名引入vscode报错的问题。改完这里配置之后如果没生效，需要重新启动vscode。
+    * 这里需要和webpack的resolve.alias配合使用。
+    */
     "paths": {
       "@/*": ["src/*"]                                  // this mapping is relative to "baseUrl"
     },                                                   /* Specify a set of entries that re-map imports to additional lookup locations. */

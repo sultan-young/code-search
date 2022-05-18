@@ -8,3 +8,5 @@ const root = ReactDOM.createRoot(
 root.render(
     <App />
 );
+throw new Error('error')
+  
