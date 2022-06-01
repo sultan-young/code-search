@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "a": {
+    "code-search": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/a",
+            "outputPath": "dist/code-search",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "a:build:production"
+              "browserTarget": "code-search:build:production"
             },
             "development": {
-              "browserTarget": "a:build:development"
+              "browserTarget": "code-search:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "a"
+  "defaultProject": "code-search"
 }

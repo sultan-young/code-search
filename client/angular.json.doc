@@ -1,26 +1,27 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "projects", // 用来创建新工程的位置。绝对路径或相对于工作目录的路径
+  // 对于工作中的每个项目都会包含一个子分区，子分区是每个项目的配置项。
   "projects": {
-    "a": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
+    "code-search": {
+      "projectType": "application", // "application" 或 "library" 之一。应用可以在浏览器中独立运行，而库则不行。
+      "schematics": { // 一组原理图（schematic），它可以为该项目自定义 ng generate 子命令的默认选项
+        "@schematics/angular:component": {s
           "style": "less"
         },
         "@schematics/angular:application": {
           "strict": true
         }
       },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
-      "architect": {
+      "root": "", // 该项目的根文件夹，相对于工作区文件夹的路径。初始应用的值为空，因为它位于工作区的顶层。
+      "sourceRoot": "src", // 该项目源文件的根文件夹。
+      "prefix": "app", // Angular 所生成的选择器的前缀字符串。可以自定义它，以作为应用或功能区的标识。
+      "architect": { // 为本项目的各个构建器目标配置默认值。
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/a",
+            "outputPath": "dist/code-search",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "a:build:production"
+              "browserTarget": "code-search:build:production"
             },
             "development": {
-              "browserTarget": "a:build:development"
+              "browserTarget": "code-search:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,5 +108,17 @@
       }
     }
   },
-  "defaultProject": "a"
+  "defaultProject": "code-search", // 当命令中没有指定参数时，要使用的默认工程名称。当用ng new再工作区中创建新应用时候，该应用就会一直作为工作区的默认项目，除非修改这里。
+  "cli": { // 一组用于自定义angular cli的选项。
+
+  },
+  "schematics": "", // 用于定制ng generate子命令在工作区中的默认选项。 // TIPS: 貌似可以用来去做自动生成组件骨架
+  "cli": { // 用于自定义angular cli
+    "analytics": false, // 是否开启于angular团队共享匿名使用数据
+    "analyticsSharing": {}, // 一组分析共享选项
+    "warnings": {
+      "versionMismatch": true, // 当全局angular cli版本比本地版本高时候显示警告
+    },
+   "packageManager": "npm" // 要使用的首选包管理工具
+  } 
 }
