@@ -14,3 +14,4 @@ const { configuration, environment } = options;
 console.log(options)
 
 shell.exec(`ng serve --configuration ${configuration}`);
+ 
