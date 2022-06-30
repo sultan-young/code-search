@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky install",
-    "commit": "npx git cz"
+    "commit": "npx cz"
   },
   "config": {
     "commitizen": {
