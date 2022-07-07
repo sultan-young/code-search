@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky install",
-    "commit": "npx cz"
+    "cz": "npx cz"
   },
   "config": {
     "commitizen": {
@@ -27,6 +27,8 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "commander": "^9.3.0",
+    "gulp": "^4.0.2",
+    "husky": "^8.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
