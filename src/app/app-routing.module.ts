@@ -9,7 +9,12 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import("./pages/search/index.module").then(m => m.SearchModule)
-  }
+  },
+  {
+    path: '', 
+    pathMatch: 'full', 
+    redirectTo: '/login'
+  },
 ];
 
 @NgModule({

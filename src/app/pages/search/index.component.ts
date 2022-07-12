@@ -12,7 +12,6 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.canvas.nativeElement.getContext('2d')
    
   }
 
