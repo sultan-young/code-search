@@ -4,7 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouteStrategyService } from './pages/search/router/RouteStrategyService ';
+import { RouteStrategyService } from './routeStrategyService ';
 
 @NgModule({
   declarations: [

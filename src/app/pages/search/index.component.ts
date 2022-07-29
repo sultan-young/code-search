@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -7,12 +8,22 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
+  searchValue = '';
 
-  constructor() { 
+
+  constructor(
+  ) { 
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.searchValue = '1000';
+
+    }, 2000);
    
   }
 
+  change() {
+    console.log('change', this.searchValue)
+  }
 }

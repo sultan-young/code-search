@@ -8,16 +8,6 @@ const routes: Routes = [
   {
     path: "",
     component: SearchComponent,
-    children: [
-      {
-        path: 'A',
-        component: RouteAComponent,
-      },
-      {
-        path: 'B',
-        component: RouteBComponent,
-      }
-    ]
   },
 ];
 
